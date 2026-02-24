@@ -61,7 +61,6 @@ function toggleStyle(id) {
     selected.classList.remove('bg-[#FFFFFF]', 'text-black')
     selected.classList.add('bg-blue-800', 'text-white')
     // step 1 finish
-
     // show and hidden particular section
     // step 4 start
     // filtering while clicking the filter button (All, Interview, Reject)
@@ -72,7 +71,6 @@ function toggleStyle(id) {
     } else if (id == 'all-filter-btn') {
         allCardSection.classList.remove('hidden');
         filterSection.classList.add('hidden')
-        
     } else if (id == 'rejected-filter-btn') {
         allCardSection.classList.add('hidden');
         filterSection.classList.remove('hidden')
@@ -96,7 +94,6 @@ mainContainer.addEventListener('click', function (event) {
         // parenNode.querySelector('.status').innerText = 'INTERVIEW'
         parenNode.querySelector('.status').innerHTML = `<button class="interview-btn border border-green-700 text-green-700 rounded-[8px] px-4 py-2">INTERVIEW</button>`
 
-
         const cardInfo = {
             companyName,
             postName,
@@ -111,7 +108,6 @@ mainContainer.addEventListener('click', function (event) {
         if (!companyExist) {
             interviewList.push(cardInfo)
         }
-
         // step 2 finish
         // removing the company from reject list
         rejectList = rejectList.filter(item => item.companyName != cardInfo.companyName)
@@ -120,7 +116,6 @@ mainContainer.addEventListener('click', function (event) {
         if (currentStatus == 'rejected-filter-btn') {
             renderReject()
         }
-
          calculateCount()
 
 
@@ -137,7 +132,6 @@ mainContainer.addEventListener('click', function (event) {
         // parenNode.querySelector('.status').innerText = 'REJECTED'
         parenNode.querySelector('.status').innerHTML = `<button class="rejected-btn border border-red-600 text-red-600 rounded-[8px] px-4 py-2">REJECTED</button>`
         
-
         const cardInfo = {
             companyName,
             postName,
@@ -152,22 +146,17 @@ mainContainer.addEventListener('click', function (event) {
         if (!companyExist) {
             rejectList.push(cardInfo)
         }
-
         // removing the company from interview list
         interviewList = interviewList.filter(item => item.companyName != cardInfo.companyName)
-
         // console.log(interviewList);
-
         // after remove rerender the html
         if (currentStatus == "interview-filter-btn") {
             renderInterview();
         }
         calculateCount()
-
     }
-
 })
-// ------------------------------
+
 function renderEmptyState(message = "No jobs available") {
     filterSection.innerHTML = `
         <div class="bg-white border border-[#F1F2F4] rounded-[8px] p-16 text-center">
@@ -181,21 +170,14 @@ function renderEmptyState(message = "No jobs available") {
         </div>
     `;
 }
-// --------------------------
 // step 3  html file create
 function renderInterview() {
     // make the filterSection empty every time
     filterSection.innerHTML = ''
-
-    // -----------------------------
     if (interviewList.length === 0) {
         renderEmptyState("No jobs available");
         return;
     }
-    
-    // -----------------------------
-
-
     // crating innerHtml
     for (let interview of interviewList) {
         // console.log(interview);
@@ -209,36 +191,23 @@ function renderInterview() {
         <div class="space-y-6">
                     <!-- part 1 -->
                     <div>
-                          
                         <p class="companyName text-[20px] font-semibold">${interview.companyName}</p>
-                          
                         <p class="postName text-[#64748B]">${interview.postName}</p>
                     </div>
-
                     <!-- part 2 -->
                     <div>
-                       
                         <p class="jobType text-[14px] text-[#64748B]">${interview.jobType}</p>
                         <p class="water text-[14px] text-[#64748B]"></p>
-                        
                     </div>
                     <!-- part 3 -->
-                    
                     <p class="status text-[14px]"><span class ="border border-green-700 text-green-700 rounded-[8px] px-4 py-2">${interview.status}</span></p>
                     <p class="notes text-[#323B49]">${interview.notes}</p>
-
                     <div class="flex gap-5">
-                               
                         <button class="interview-btn bg-white border border-green-700 text-green-700 rounded-[8px] px-4 py-2">INTERVIEW</button>
-                               
                         <button class="rejected-btn bg-white border border-red-600 text-red-600 rounded-[8px] px-4 py-2">REJECTED</button>
                     </div>
                 </div>
-
-                
-                
                 </div>
-
         `
         filterSection.appendChild(div)
     }
@@ -268,34 +237,22 @@ function renderReject() {
         <div class="space-y-6">
                     <!-- part 1 -->
                     <div>
-                         
                         <p class="companyName text-[20px] font-semibold">${reject.companyName}</p>
-                         
                         <p class="postName text-[#64748B]">${reject.postName}</p>
                     </div>
-
                     <!-- part 2 -->
                     <div>
-                        
                         <p class="jobType text-[14px] text-[#64748B]">${reject.jobType}</p>
                         <p class="water text-[14px] text-[#64748B]"></p>
-                        
                     </div>
                     <!-- part 3 -->
-                     
                     <p class="status text-[14px]"><span class="border border-red-600 text-red-600 rounded-[8px] px-4 py-2">${reject.status}</span></p>
                     <p class="notes text-[#323B49]">${reject.notes}</p>
-
                     <div class="flex gap-5">
-                               
-                        <button class="interview-btn bg-white border border-green-700 text-green-700 rounded-[8px] px-4 py-2">INTERVIEW</button>
-                                
+                        <button class="interview-btn bg-white border border-green-700 text-green-700 rounded-[8px] px-4 py-2">INTERVIEW</button>   
                         <button class="rejected-btn bg-white border border-red-600 text-red-600 rounded-[8px] px-4 py-2">REJECTED</button>
                     </div>
                 </div>
-
-                
-                
                 </div>
         `
         filterSection.appendChild(div)
