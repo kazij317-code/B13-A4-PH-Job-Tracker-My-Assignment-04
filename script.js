@@ -8,7 +8,10 @@ deleteButtons.forEach(button => {
         // event.target is the button that was clicked
         // event.target.parentNode is the parent element (the .card div)
         const cardToRemove = event.target.parentNode.parentNode;
+        console.log(cardToRemove);
+        
         cardToRemove.remove(); // The remove() method directly removes the element
+        calculateCount()
     });
 });
 
@@ -33,7 +36,7 @@ const filterSection = document.getElementById('filtered-section')
 
 function calculateCount() {
     tabCount.innerText = allCardSection.children.length
-    total.innerText = allCardSection.children.length //3
+    total.innerText = allCardSection.children.length //8
     interviewCount.innerText = interviewList.length
     rejectedCount.innerText = rejectList.length
 }
@@ -72,14 +75,17 @@ function toggleStyle(id) {
         filterSection.classList.remove('hidden')
         renderInterview()
     } else if (id == 'all-filter-btn') {
+    
         allCardSection.classList.remove('hidden');
         filterSection.classList.add('hidden')
+        // renderEmptyState("No jobs available");
     } else if (id == 'rejected-filter-btn') {
         allCardSection.classList.add('hidden');
         filterSection.classList.remove('hidden')
         renderReject()
     }
 }
+
 
 
 // step 2 delegation
@@ -169,11 +175,34 @@ mainContainer.addEventListener('click', function (event) {
     }
 
 })
-
+// ------------------------------
+function renderEmptyState(message = "No jobs available") {
+    filterSection.innerHTML = `
+        <div class="bg-white border border-[#F1F2F4] rounded-[8px] p-16 text-center">
+            <div class="flex justify-center mb-6">
+                <div class="bg-blue-100 p-6 rounded-xl">
+                    <i class="fa-regular fa-file-lines text-5xl text-blue-500"></i>
+                </div>
+            </div>
+            <h2 class="text-xl font-semibold text-[#002C5C] mb-2">${message}</h2>
+            <p class="text-[#64748B]">Check back soon for new job opportunities</p>
+        </div>
+    `;
+}
+// --------------------------
 // step 3  html file create
 function renderInterview() {
     // make the filterSection empty every time
     filterSection.innerHTML = ''
+
+    // -----------------------------
+    if (interviewList.length === 0) {
+        renderEmptyState("No interview jobs available");
+        return;
+    }
+    
+    // -----------------------------
+
 
     // crating innerHtml
     for (let interview of interviewList) {
@@ -226,6 +255,15 @@ function renderInterview() {
 function renderReject() {
     // make the filterSection empty every time
     filterSection.innerHTML = ''
+
+    // -----------------------------------
+    if (rejectList.length === 0) {
+        renderEmptyState("No rejected jobs available");
+        return;
+    }
+    // ------------------------------
+
+
     // crating innerHtml
     for (let reject of rejectList) {
 
