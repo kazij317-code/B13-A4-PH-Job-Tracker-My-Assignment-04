@@ -189,7 +189,7 @@ function renderInterview() {
 
     // -----------------------------
     if (interviewList.length === 0) {
-        renderEmptyState("No interview jobs available");
+        renderEmptyState("No jobs available");
         return;
     }
     
@@ -209,33 +209,33 @@ function renderInterview() {
         <div class="space-y-6">
                     <!-- part 1 -->
                     <div>
-                          <!-- 'companyName companyName' -->
+                          
                         <p class="companyName text-[20px] font-semibold">${interview.companyName}</p>
-                          <!-- 'latinName postName' -->
+                          
                         <p class="postName text-[#64748B]">${interview.postName}</p>
                     </div>
 
                     <!-- part 2 -->
                     <div>
-                        <!-- light/jobType -->
+                       
                         <p class="jobType text-[14px] text-[#64748B]">${interview.jobType}</p>
                         <p class="water text-[14px] text-[#64748B]"></p>
                         
                     </div>
                     <!-- part 3 -->
-                     <!-- bg-gray-300 w-[113px] px-3 py-1 -->
+                    
                     <p class="status text-[14px]"><span class ="border border-green-700 text-green-700 rounded-[8px] px-4 py-2">${interview.status}</span></p>
                     <p class="notes text-[#323B49]">${interview.notes}</p>
 
                     <div class="flex gap-5">
-                               <!-- 'interview-btn/thriving-btn' -->
+                               
                         <button class="interview-btn bg-white border border-green-700 text-green-700 rounded-[8px] px-4 py-2">INTERVIEW</button>
-                                <!-- 'rejected-btn'/struggling-btn -->
+                               
                         <button class="rejected-btn bg-white border border-red-600 text-red-600 rounded-[8px] px-4 py-2">REJECTED</button>
                     </div>
                 </div>
 
-                <!-- main part 2 -->
+                
                 
                 </div>
 
@@ -250,7 +250,7 @@ function renderReject() {
 
     // -----------------------------------
     if (rejectList.length === 0) {
-        renderEmptyState("No rejected jobs available");
+        renderEmptyState("No jobs available");
         return;
     }
     // ------------------------------
@@ -268,33 +268,33 @@ function renderReject() {
         <div class="space-y-6">
                     <!-- part 1 -->
                     <div>
-                          <!-- 'companyName companyName' -->
+                         
                         <p class="companyName text-[20px] font-semibold">${reject.companyName}</p>
-                          <!-- 'latinName postName' -->
+                         
                         <p class="postName text-[#64748B]">${reject.postName}</p>
                     </div>
 
                     <!-- part 2 -->
                     <div>
-                        <!-- light/jobType -->
+                        
                         <p class="jobType text-[14px] text-[#64748B]">${reject.jobType}</p>
                         <p class="water text-[14px] text-[#64748B]"></p>
                         
                     </div>
                     <!-- part 3 -->
-                     <!-- bg-gray-300 w-[113px] px-3 py-1 -->
+                     
                     <p class="status text-[14px]"><span class="border border-red-600 text-red-600 rounded-[8px] px-4 py-2">${reject.status}</span></p>
                     <p class="notes text-[#323B49]">${reject.notes}</p>
 
                     <div class="flex gap-5">
-                               <!-- 'interview-btn/thriving-btn' -->
+                               
                         <button class="interview-btn bg-white border border-green-700 text-green-700 rounded-[8px] px-4 py-2">INTERVIEW</button>
-                                <!-- 'rejected-btn'/struggling-btn -->
+                                
                         <button class="rejected-btn bg-white border border-red-600 text-red-600 rounded-[8px] px-4 py-2">REJECTED</button>
                     </div>
                 </div>
 
-                <!-- main part 2 -->
+                
                 
                 </div>
         `
