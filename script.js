@@ -1,20 +1,15 @@
 // ---------------------Delete Button---------------------
-// Get all elements with the class "delete-btn"
-const deleteButtons = document.querySelectorAll('.btn-delete'); //
 
-// Loop through each button and add a click event listener
+const deleteButtons = document.querySelectorAll('.btn-delete'); 
+
 deleteButtons.forEach(button => {
     button.addEventListener('click', (event) => {
-        // event.target is the button that was clicked
-        // event.target.parentNode is the parent element (the .card div)
         const cardToRemove = event.target.parentNode.parentNode;
-        console.log(cardToRemove);
-        
-        cardToRemove.remove(); // The remove() method directly removes the element
+        // console.log(cardToRemove);
+        cardToRemove.remove(); 
         calculateCount()
     });
 });
-
 // ---------------------------------------------
 let interviewList = [];
 let rejectList = []
@@ -45,24 +40,24 @@ calculateCount()
 
 // step 1;
 function toggleStyle(id) {
-    // adding gray bg for all
+    // adding bg-[#FFFFFF] for all
     allFilterBtn.classList.add('bg-[#FFFFFF]', 'text-black')
     interviewFilterBtn.classList.add('bg-[#FFFFFF]', 'text-black')
     rejectFilterBtn.classList.add('bg-[#FFFFFF]', 'text-black')
 
-    // if any button has black then remove
+    // if any button has bg-blue-800 then remove
     allFilterBtn.classList.remove('bg-blue-800', 'text-white')
     interviewFilterBtn.classList.remove('bg-blue-800', 'text-white')
     rejectFilterBtn.classList.remove('bg-blue-800', 'text-white')
 
     // console.log(id);
-    const selected = document.getElementById(id)//this is the button that clicked for filter
+    const selected = document.getElementById(id)
 
     currentStatus = id
     // console.log(currentStatus);
     // console.log(selected);
 
-    // adding black bg for current button
+    // adding black bg-[#FFFFFF] for current button
     selected.classList.remove('bg-[#FFFFFF]', 'text-black')
     selected.classList.add('bg-blue-800', 'text-white')
     // step 1 finish
@@ -75,18 +70,15 @@ function toggleStyle(id) {
         filterSection.classList.remove('hidden')
         renderInterview()
     } else if (id == 'all-filter-btn') {
-    
         allCardSection.classList.remove('hidden');
         filterSection.classList.add('hidden')
-        // renderEmptyState("No jobs available");
+        
     } else if (id == 'rejected-filter-btn') {
         allCardSection.classList.add('hidden');
         filterSection.classList.remove('hidden')
         renderReject()
     }
 }
-
-
 
 // step 2 delegation
 mainContainer.addEventListener('click', function (event) {
