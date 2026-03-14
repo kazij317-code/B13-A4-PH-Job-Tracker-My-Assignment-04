@@ -24,6 +24,12 @@ const allFilterBtn = document.getElementById('all-filter-btn')
 const interviewFilterBtn = document.getElementById('interview-filter-btn')
 const rejectFilterBtn = document.getElementById('rejected-filter-btn')
 
+
+
+
+
+
+
 const allCardSection = document.getElementById('allCards');
 const mainContainer = document.querySelector('main')
 const filterSection = document.getElementById('filtered-section')
@@ -109,7 +115,7 @@ mainContainer.addEventListener('click', function (event) {
             interviewList.push(cardInfo)
         }
         // step 2 finish
-        // removing the company from reject list
+        // removing the company from reject list 
         rejectList = rejectList.filter(item => item.companyName != cardInfo.companyName)
 
         // after remove rerender the html
