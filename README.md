@@ -1,3 +1,45 @@
+📚 Job Tracker
+
+Job Tracker is a productivity-focused web application designed to help job seekers organize their career search. It provides a visual dashboard to track the status of multiple applications in one place.
+
+📸 Screenshot
+
+![Job Tracker Screenshot](./jobs.png)
+
+
+⚙️ Tech Stack
+
+HTML5, CSS3, JavaScript (DOM Manipulation), and Responsive Frameworks.
+
+✨ Main Features
+📂 Track job applications in an organized way
+🔍 Filter and manage application status
+📱 Fully responsive for mobile and desktop
+⚡ Fast and interactive user experience
+🎨 Clean and simple UI
+
+
+📦 Dependencies
+No external libraries (Vanilla JavaScript project)
+
+🚀 Run Locally
+
+Follow these steps to run the project on your local machine:
+
+1️⃣ Clone the repository
+git clone https://github.com/kazij317-code/B13-A4-PH-Job-Tracker-My-Assignment-04.git
+2️⃣ Go to project folder
+cd B13-A4-PH-Job-Tracker-My-Assignment-04
+3️⃣ Open in browser
+Open index.html file in your browser
+
+
+🔗 Relevant Links
+🌐 Live Site: https://kazij317-code.github.io/B13-A4-PH-Job-Tracker-My-Assignment-04/
+💻 GitHub Repo: https://github.com/kazij317-code/B13-A4-PH-Job-Tracker-My-Assignment-04
+
+
+--------------------------------------------------------------------
 ## Answers to Questions
 
 ### 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
