@@ -4,7 +4,7 @@ Job Tracker is a productivity-focused web application designed to help job seeke
 
 📸 Screenshot
 
-![Job Tracker Screenshot](./jobs.png)
+![Job Tracker Screenshot](./JobTracker.png)
 
 
 ⚙️ Tech Stack
